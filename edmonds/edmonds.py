@@ -135,9 +135,8 @@ def mst(root,G):
     """
 
     RG = _reverse(G)
-    if root not in RG:
-        return None
-    RG[root].clear()
+    if root in RG:
+        RG[root] = {}
     g = {}
     for n in RG:
         if len(RG[n]) == 0:
