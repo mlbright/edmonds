@@ -39,7 +39,11 @@ def _reverse(graph):
                 r[dst] = { src : c }
     return r
 
-def _getCycle(n,g,visited=set(),cycle=[]):
+def _getCycle(n, g, visited=None, cycle=None):
+    if visited is None:
+        visited = set()
+    if cycle is None:
+        cycle = []
     visited.add(n)
     cycle += [n]
     if n not in g:
